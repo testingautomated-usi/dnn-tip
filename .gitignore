@@ -1,0 +1,10 @@
+dist/
+__pycache__/
+.coverage
+.idea/
+.tox/
+*.egg-info/
+*.py[cod]
+*$py.class
+.python-version
+poetry.lock

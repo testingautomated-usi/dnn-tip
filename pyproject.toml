@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "foo"
+version = "0.1.0"
+description = ""
+authors = ["Viktor Persson <viktor.persson@arcsin.se>"]
+
+[tool.poetry.dependencies]
+python = "^3.6.2"
+
+[tool.poetry.dev-dependencies]
+black = "^21.9b0"
+pytest = "^6.2.5"
+pytest-cov = "^2.12.1"
+pytest-sugar = "^0.9.4"
+tox = "^3.24.4"
+tox-pyenv = "^1.1.0"
+pytest-watch = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
