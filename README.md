@@ -1,50 +1,47 @@
-# Python Package Starter
-![test](https://github.com/vikpe/python-package-starter/workflows/test/badge.svg?branch=master) [![codecov](https://codecov.io/gh/vikpe/python-package-starter/branch/master/graph/badge.svg)](https://codecov.io/gh/vikpe/python-package-starter) [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+# DNN-TIP: Common Test Input Prioritizers Library 
 
-## Features
-* Multi python version support ([pyenv](https://github.com/pyenv/pyenv), [tox](https://github.com/tox-dev/tox/))
-* Single config using the new standardized `pyproject.toml` ([PEP518](https://www.python.org/dev/peps/pep-0518/))
-* Simple build/publish/dependency management using [poetry](https://github.com/sdispater/poetry)
-* Continous integration ([GitHub Actions](https://help.github.com/en/actions))
-* Code coverage reporting ([Codecov](https://codecov.io/))
-* Code formatting ([black](https://github.com/psf/black))
+[![test](https://github.com/testingautomated-usi/dnn-tip/actions/workflows/test.yml/badge.svg)](https://github.com/testingautomated-usi/dnn-tip/actions/workflows/test.yml)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![docstr-coverage](https://img.shields.io/endpoint?url=https://jsonbin.org/MiWeiss/dnn-tip/badges/docstr-cov)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![Python Version](https://img.shields.io/pypi/pyversions/dnn-tip)](https://img.shields.io/pypi/pyversions/dnn-tip)
+[![PyPi Deployment](https://badgen.net/pypi/v/dnn-tip?cache=30)](https://pypi.org/project/dnn-tip/)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/testingautomated-usi/dnn-tip/blob/develop/LICENSE)
 
-## Prerequisites
-* [pyenv](https://github.com/pyenv/pyenv) (for automatic installation use [pyenv-installer](https://github.com/pyenv/pyenv-installer))
-* [poetry](https://github.com/sdispater/poetry)
+
+## Implemented Approaches
+* __Surprise Adequacies__
+    * Distance-based Surprise Adequacy (DSA)
+    * Likelihood-based Surprise Adequacy (LSA)
+    * MultiModal-Likelihood-based Surprise Adequacy (MLSA)
+    * Mahalanobis-based Surprise Adequacy (MDSA)
+    * _abstract_ MultiModal Surprise Adequacy
+* __Surprise Coverage__
+  * Neuron-Activation Coverage (NAC)
+  * K-Multisection Neuron Coverage (KMNC)
+  * Neuron Boundary Coverage (NBC)
+  * Strong Neuron Activation Coverage (SNAC)
+  * Top-k Neuron Coverage (TKNC)
+* __Utilities__
+    * APFD calculation
+    * Coverage-Added and Coverage-Total Prioritization Methods (CAM and CTM)
+
+If you are looking for the uncertainty metrics we also tested (including DeepGini),
+head over to the sister repository [uncertainty-wizard](https://github.com/testingautomated-usi/uncertainty-wizard).
+
+[//]: # (TODO LINK)
+
+If you want to reproduce our exact experiments, there's a reproduction package and docker stuff available at **TODO LINK**.
+
+
+
 
 ## Installation
-1. Install [pyenv](https://github.com/pyenv/pyenv).
-2. Install the Python versions you want to support using `pyenv`.
-  ```sh
-  pyenv install 3.6.9
-  pyenv install 3.8.0
-  ```
-3. Clone repo: `git clone git@github.com:vikpe/python-package-starter.git [PACKAGE_NAME]` 
-4. `cd [PACKAGE NAME]`
-5. Create a virtual env: `pyenv virtualenv 3.8.0 foo38`
-6. Activate virtual env: `pyenv activate foo38`
-7. Install poetry: `pip install poetry`
-8. Install dependencies: `poetry install`
-9. Edit `pyproject.toml`, update project name, description and author and any other settings you like.
+It's as easy as `pip install dnn-tip`.
 
-## Usage
 
-Command | Description
---- | ---
-`poetry add [package]` | Add package to dependencies.
-`poetry add -D [package]` | Add package to dev dependencies.
-`poetry run pytest` | Run tests in local Python version.
-`poetry run ptw tests foo --clear` | Watch for file changes and run tests in local Python version.
-`poetry run tox` | Run tests in all Python versions defined in `tox.ini`.
-`poetry run black .` | Run black code formatter.
-`poetry build` | Build sdist and wheel to `/dist`.
-`poetry publish` | Publish package to PyPi.
 
-## Continous integration
 
-### GitHub Actions
-Tests are run whenever there is a commit, see `.github/workflows/test.yml` for details.
+## Documentation
 
-### Code coverage
-Enable code coverage reporting to [Codecov](https://codecov.io/) by creating a secret with name `CODECOV_TOKEN` in your repository settings (Settings -> Secrets -> New sectret) and value set to the token created by Codecov.
+Find the documentation at [https://testingautomated-usi.github.io/dnn-tip/](https://testingautomated-usi.github.io/dnn-tip/).

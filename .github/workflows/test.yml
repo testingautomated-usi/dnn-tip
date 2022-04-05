@@ -5,8 +5,15 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        python-version: [3.6, 3.7, 3.8, 3.9]
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.6, 3.7, 3.8, 3.9, '3.10']
+        exclude:
+          # "Version 3.6 with arch x64 not found"
+          - os: windows-latest
+            python-version: 3.6
+          # "Version 3.6 with arch x64 not found"
+          - os: macos-latest
+            python-version: 3.6
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v2
@@ -14,25 +21,11 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: ${{ matrix.python-version }}
-      - name: Cache dependencies
-        uses: actions/cache@v1
-        with:
-          path: ~/.cache/pip
-          key: ${{ matrix.os }}-pip-${{ hashFiles('pyproject.toml') }}
-          restore-keys: |
-            ${{ matrix.os }}-pip-
       - name: Install dependencies
         run: |
-          pip install poetry
-          poetry install
-      - name: Run tests
-        run: poetry run pytest tests --cov --cov-report=xml
-      - name: Upload coverage to Codecov
-        env:
-          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-        if: ${{ env.CODECOV_TOKEN }}
-        uses: codecov/codecov-action@v1
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          file: coverage.xml
-          name: ${{ matrix.os }}, python ${{ matrix.python-version }}
+          python -m pip install --upgrade pip
+          pip install -e .[test]
+      - name: Test with pytest
+        run: |
+          pytest tests
+
