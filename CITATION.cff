@@ -1,0 +1,43 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: >-
+  Simple Techniques Work Surprisingly Well for Neural
+  Network Test Prioritization and Active Learning
+  (Replication Paper)
+message: >-
+  When using this software, please cite paper from
+  which this software is an artifact (
+      Simple Techniques Work Surprisingly Well for Neural
+      Network Test Prioritization and Active Learning
+      (Replication Paper), to appear at ISSTA 2022.
+  )
+type: software
+authors:
+  - given-names: Michael
+    family-names: Weiss
+    email: michael.weiss@usi.ch
+    affiliation: Università della Svizzera italiana
+    orcid: 'https://orcid.org/0000-0002-8944-389X'
+  - given-names: Paolo
+    family-names: Tonella
+    email: paolo.tonella@usi.ch
+    affiliation: Università della Svizzera italiana
+    orcid: 'https://orcid.org/0000-0003-3088-0339'
+preferred-citation:
+  type: article
+  authors:
+  - given-names: Michael
+    family-names: Weiss
+    email: michael.weiss@usi.ch
+    affiliation: Università della Svizzera italiana
+    orcid: 'https://orcid.org/0000-0002-8944-389X'
+  - given-names: Paolo
+    family-names: Tonella
+    email: paolo.tonella@usi.ch
+    affiliation: Università della Svizzera italiana
+    orcid: 'https://orcid.org/0000-0003-3088-0339'
+  journal: "Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis"
+  title: "Simple Techniques Work Surprisingly Well for Neural Network Test Prioritization and Active Learning (Replication Paper)"
+  year: 2022

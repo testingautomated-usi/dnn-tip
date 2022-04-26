@@ -1,0 +1,10 @@
+paths:
+  - dnn_tip
+verbose: 2 # int (0-3)
+skip_magic: True
+skip_file_doc: True
+skip_init: True
+skip_class_def: False
+skip_private: True
+follow_links: True
+percentage_only: False

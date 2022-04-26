@@ -8,3 +8,5 @@ __pycache__/
 *$py.class
 .python-version
 poetry.lock
+/pypi_deploy.sh
+/build/lib
