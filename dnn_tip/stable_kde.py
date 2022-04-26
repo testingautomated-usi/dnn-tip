@@ -46,8 +46,8 @@ class StableGaussianKDE(gaussian_kde):
                 self._data_inv_cov = None
                 return
 
-        self.covariance = self._data_covariance * self.factor ** 2
-        self.inv_cov = self._data_inv_cov / self.factor ** 2
+        self.covariance = self._data_covariance * self.factor**2
+        self.inv_cov = self._data_inv_cov / self.factor**2
         L = np.linalg.cholesky(self.covariance * 2 * np.pi)
         self.log_det = 2 * np.log(np.diag(L)).sum()
         self._norm_factor = sqrt(np.linalg.det(2 * np.pi * self.covariance))
@@ -63,7 +63,7 @@ class StableGaussianKDE(gaussian_kde):
         # positive definite.
         # !!!!!
         increment = 1e-10
-        while np.any(np.linalg.eigh(covariance * self.factor ** 2)[0] <= 0):
+        while np.any(np.linalg.eigh(covariance * self.factor**2)[0] <= 0):
             np.fill_diagonal(covariance, increment)
             if increment > self.MAX_INCREMENT:
                 warnings.warn(

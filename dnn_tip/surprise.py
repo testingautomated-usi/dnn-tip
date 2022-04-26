@@ -9,7 +9,7 @@ import re
 import sys
 import warnings
 from concurrent.futures import ThreadPoolExecutor, as_completed
-from typing import List, Tuple, Union, Callable, Iterable, Optional, Dict
+from typing import Callable, Dict, Iterable, List, Optional, Tuple, Union
 
 import numpy as np
 import psutil

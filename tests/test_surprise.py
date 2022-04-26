@@ -2,15 +2,15 @@ import numpy as np
 import pytest
 
 from dnn_tip.surprise import (
+    DSA,
+    LSA,
+    MDSA,
+    MLSA,
+    MultiModalSA,
+    SurpriseCoverageMapper,
     _by_class_discriminator,
     _class_predictions,
     _flatten_predictions,
-    MDSA,
-    LSA,
-    DSA,
-    MultiModalSA,
-    SurpriseCoverageMapper,
-    MLSA,
     _KmeansDiscriminator,
 )
 
@@ -60,31 +60,31 @@ def test__flatten_predictions(method_input, expected: np.ndarray):
     "buckets, limit, overflow, sa, expected",
     [
         (
-                3,
-                1,
-                False,
-                np.array([0.1, 0.2, 0.8]),
-                np.array(
-                    [[True, False, False], [True, False, False], [False, False, True]]
-                ),
+            3,
+            1,
+            False,
+            np.array([0.1, 0.2, 0.8]),
+            np.array(
+                [[True, False, False], [True, False, False], [False, False, True]]
+            ),
         ),
         (
-                3,
-                1,
-                True,
-                np.array([0.1, 0.2, 0.8]),
-                np.array(
-                    [[True, False, False], [True, False, False], [False, True, False]]
-                ),
+            3,
+            1,
+            True,
+            np.array([0.1, 0.2, 0.8]),
+            np.array(
+                [[True, False, False], [True, False, False], [False, True, False]]
+            ),
         ),
         (
-                3,
-                1,
-                True,
-                np.array([0.1, 0.2, 1.1]),
-                np.array(
-                    [[True, False, False], [True, False, False], [False, False, True]]
-                ),
+            3,
+            1,
+            True,
+            np.array([0.1, 0.2, 1.1]),
+            np.array(
+                [[True, False, False], [True, False, False], [False, False, True]]
+            ),
         ),
     ],
 )

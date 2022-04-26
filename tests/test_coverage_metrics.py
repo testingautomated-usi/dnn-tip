@@ -1,6 +1,6 @@
 import numpy as np
 
-from dnn_tip.neuron_coverage import NAC, KMNC, NBC, SNAC, TKNC
+from dnn_tip.neuron_coverage import KMNC, NAC, NBC, SNAC, TKNC
 
 ACTIVATIONS_1 = [
     np.array([[0.1, 0.4, 0.9, 0.4], [0.1, 0.9, 0.9, 0.4]]),

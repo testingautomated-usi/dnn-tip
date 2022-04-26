@@ -24,11 +24,7 @@ setup(
     author_email="michael.weiss@usi.ch",
     license="MIT",
     packages=["dnn_tip"],
-    install_requires=[
-        "psutil",
-        "scikit-learn",
-        "tqdm"
-    ],
+    install_requires=["psutil", "scikit-learn", "tqdm"],
     extras_require={
         "lint": [
             "flake8==3.8.2",
@@ -36,7 +32,7 @@ setup(
             "isort==5.6.4",
             "docstr-coverage==2.2.0",
         ],
-        "test": ["pytest>=6.2.5"]
+        "test": ["pytest>=6.2.5"],
     },
     include_package_data=True,
     zip_safe=False,
