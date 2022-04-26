@@ -16,7 +16,11 @@ import psutil
 import sklearn
 import tqdm
 from packaging import version
-from psutil._common import bytes2human
+try:
+    from psutil._common import bytes2human
+except ImportError:
+    # On some systems (e.g. colab), the psutil package cannot be imported.
+    bytes2human = None
 from scipy.stats import gaussian_kde
 from sklearn.cluster import KMeans
 from sklearn.covariance import EmpiricalCovariance
@@ -694,7 +698,10 @@ class DSA(SA):
 def _memory_warning(required_memory: int):
     available_memory = psutil.virtual_memory().available
     if available_memory is not None and required_memory > available_memory / 2:
-        human_readable = bytes2human(required_memory)
+        if bytes2human is not None:
+            human_readable = bytes2human(required_memory)
+        else:
+            human_readable = f"{required_memory} bytes"
         warnings.warn(
             f"Expected peak memory use for DSA is higher than {human_readable}, "
             f"which exceeds 50% available memory.",
