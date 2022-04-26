@@ -7,6 +7,7 @@
 [![Python Version](https://img.shields.io/pypi/pyversions/dnn-tip)](https://img.shields.io/pypi/pyversions/dnn-tip)
 [![PyPi Deployment](https://badgen.net/pypi/v/dnn-tip?cache=30)](https://pypi.org/project/dnn-tip/)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/testingautomated-usi/dnn-tip/blob/develop/LICENSE)
+[![DOI](https://zenodo.org/badge/478142616.svg)](https://zenodo.org/badge/latestdoi/478142616)
 
 
 ## Implemented Approaches
