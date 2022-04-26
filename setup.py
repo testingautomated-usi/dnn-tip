@@ -6,8 +6,8 @@ def readme():
         return f.read()
 
 
-MAJOR, MINOR, MICRO = 0, 2, 0
-__VERSION__ = "{}.{}.{}".format(MAJOR, MINOR, MICRO)
+MAJOR, MINOR, MICRO = 0, 1, 0
+__VERSION__ = "{}.{}.{}rc2".format(MAJOR, MINOR, MICRO)
 
 setup(
     name="dnn-tip",
