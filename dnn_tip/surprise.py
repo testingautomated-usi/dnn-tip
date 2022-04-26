@@ -16,6 +16,7 @@ import psutil
 import sklearn
 import tqdm
 from packaging import version
+
 try:
     from psutil._common import bytes2human
 except ImportError:
