@@ -32,7 +32,7 @@ head over to the sister repository [uncertainty-wizard](https://github.com/testi
 
 [//]: # (TODO LINK)
 
-If you want to reproduce our exact experiments, there's a reproduction package and docker stuff available at **TODO LINK**.
+If you want to reproduce our exact experiments, there's a reproduction package and docker stuff available at [testingautomated-usi/simple-tip](https://github.com/testingautomated-usi/simple-tip).
 
 
 
