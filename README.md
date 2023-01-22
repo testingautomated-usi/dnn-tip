@@ -30,8 +30,6 @@
 If you are looking for the uncertainty metrics we also tested (including DeepGini),
 head over to the sister repository [uncertainty-wizard](https://github.com/testingautomated-usi/uncertainty-wizard).
 
-[//]: # (TODO LINK)
-
 If you want to reproduce our exact experiments, there's a reproduction package and docker stuff available at [testingautomated-usi/simple-tip](https://github.com/testingautomated-usi/simple-tip).
 
 
@@ -46,3 +44,26 @@ It's as easy as `pip install dnn-tip`.
 ## Documentation
 
 Find the documentation at [https://testingautomated-usi.github.io/dnn-tip/](https://testingautomated-usi.github.io/dnn-tip/).
+
+
+## Citation
+
+Here's the reference to the paper as part of which this library was release:
+
+```
+@inproceedings{10.1145/3533767.3534375,
+author = {Weiss, Michael and Tonella, Paolo},
+title = {Simple Techniques Work Surprisingly Well for Neural Network Test Prioritization and Active Learning (Replicability Study)},
+year = {2022},
+isbn = {9781450393799},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/3533767.3534375},
+doi = {10.1145/3533767.3534375},
+booktitle = {Proceedings of the 31st ACM SIGSOFT International Symposium on Software Testing and Analysis},
+pages = {139–150},
+numpages = {12},
+keywords = {neural networks, Test prioritization, uncertainty quantification},
+location = {Virtual, South Korea},
+series = {ISSTA 2022}
+}
