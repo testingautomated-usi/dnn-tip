@@ -24,7 +24,7 @@ setup(
     author_email="michael.weiss@usi.ch",
     license="MIT",
     packages=["dnn_tip"],
-    install_requires=["psutil", "scikit-learn", "tqdm"],
+    install_requires=["psutil", "scikit-learn", "tqdm", "packaging"],
     extras_require={
         "lint": [
             "flake8==3.8.2",
