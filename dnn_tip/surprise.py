@@ -12,7 +12,9 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from typing import Callable, Dict, Iterable, List, Optional, Tuple, Union
 
 import numpy as np
+import packaging
 import psutil
+import scipy
 import sklearn
 import tqdm
 from packaging import version
@@ -444,7 +446,19 @@ class LSA(SA):
 
     def _create_gaussian_kde(self, activations: np.ndarray) -> gaussian_kde:
         cleaned_activations = self._remove_unused_columns(activations)
-        if cleaned_activations.shape[1] == 0:
+        if not packaging.version.parse(scipy.version.version) < packaging.version.parse(
+            "1.10.0"
+        ):
+            warnings.warn(
+                (
+                    "The version of scipy you are using has changed / improved the way kde is implemented,"
+                    "making it incompatible with som of our kde fixes."
+                    "We will fall back to the default scipy implementation, which may be unstable."
+                ),
+                UserWarning,
+            )
+            return gaussian_kde(cleaned_activations.transpose())
+        elif cleaned_activations.shape[1] == 0:
             warnings.warn(
                 (
                     f"The passed min_var threshold {self.min_var_threshold} and/or"
