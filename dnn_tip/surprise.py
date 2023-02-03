@@ -446,7 +446,9 @@ class LSA(SA):
 
     def _create_gaussian_kde(self, activations: np.ndarray) -> gaussian_kde:
         cleaned_activations = self._remove_unused_columns(activations)
-        if not packaging.version.parse(scipy.version.version) < packaging.version.parse("1.10.0"):
+        if not packaging.version.parse(scipy.version.version) < packaging.version.parse(
+            "1.10.0"
+        ):
             warnings.warn(
                 (
                     "The version of scipy you are using has changed / improved the way kde is implemented,"
